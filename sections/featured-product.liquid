@@ -29,6 +29,18 @@
       {% endfor %}
     </ul>
   </div>
+
+  <div class="featured-product__informations">
+    <div class="featured-product__header">
+      <span class="featured-product__badge"> {{ selected_product.metafields.custom.badge }}</span>
+      <h1 class="featured-product__title">{{ selected_product.title }}</h1>
+      <span class="featured-product__discount">
+        {{- selected_product.price | money }}
+        <span class="featured-product__price">{{ selected_product.compare_at_price | money }}</span></span
+      >
+    </div>
+    <p class="featured-product__description">{{ selected_product.description | strip_html }}</p>
+  </div>
 </section>
 
 {% schema %}
