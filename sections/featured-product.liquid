@@ -1,0 +1,50 @@
+{{ 'featured-product.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'featured-product.js' | asset_url }}" defer></script>
+{% assign selected_product = all_products[section.settings.product_selected] %}
+
+<section class="featured-product">
+  <div class="featured-product__imgs">
+    {% if selected_product.featured_image != blank %}
+      {{
+        selected_product.featured_image
+        | image_url: width: 350
+        | image_tag: loading: 'lazy', class: 'featured-product__selected-img'
+      }}
+    {% endif %}
+    <ul class="featured-product__list">
+      {% for product_image in selected_product.images %}
+        {% if forloop.first %}
+          <li class="featured-product__item">
+            {{
+              product_image
+              | image_url: width: 350
+              | image_tag: loading: 'lazy', class: 'featured-product__img selected'
+            }}
+          </li>
+        {% else %}
+          <li class="featured-product__item">
+            {{ product_image | image_url: width: 350 | image_tag: loading: 'lazy', class: 'featured-product__img' }}
+          </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Produto em Destaque",
+  "settings": [
+    {
+      "type": "product",
+      "id": "product_selected",
+      "label": "Selecione o Produto"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Produto em Destaque"
+    }
+  ]
+}
+{% endschema %}
