@@ -6,7 +6,6 @@ function selectImage(e) {
   const img = e.currentTarget;
   img.classList.add('selected');
 
-  console.dir(img)
   selectedImg.srcset = img.srcset;
 }
 productImgs.forEach((img) => {
