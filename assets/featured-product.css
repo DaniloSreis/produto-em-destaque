@@ -101,4 +101,48 @@ ul {
   color: var(--text);
   line-height: 1.5;
   margin-block-start: 1.875em;
+  grid-column: 2;
+}
+
+.featured-product__label {
+  margin-inline-end: 0.75em;
+}
+
+.featured-product__label p {
+  color: var(--text);
+  font-size: 1.25rem;
+}
+
+.featured-product__label span {
+  font-weight: 500;
+  color: var(--foreground)
+}
+
+.featured-product__options {
+  grid-column: 2;
+  margin-block-start: 1.875em;
+}
+
+.featured-product__colors {
+  display: flex;
+  gap: 12px;
+}
+
+.featured-product__color {
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.featured-product__color:not(.selected-color) {
+  box-shadow:
+    0 0 0 2px #fff,
+    0 0 0 5px var(--border);
+}
+
+.selected-color {
+  box-shadow:
+    0 0 0 2px #fff,
+    0 0 0 5px var(--primary);
 }

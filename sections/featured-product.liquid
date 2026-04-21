@@ -40,6 +40,28 @@
       >
     </div>
     <p class="featured-product__description">{{ selected_product.description | strip_html }}</p>
+
+    <div class="featured-product__options">
+      {% assign colors = selected_product.metafields.custom.colors.value %}
+      <span class="featured-product__label"></span>
+      <ul class="featured-product__colors">
+        {% for color in colors %}
+          {% if forloop.first %}
+            <li
+              class="featured-product__color selected-color"
+              style="background: {{ color.hex }}"
+              data-color-name="{{ color.name }}"
+            ></li>
+          {% else %}
+            <li
+              class="featured-product__color"
+              style="background: {{ color.hex }}"
+              data-color-name="{{ color.name }}"
+            ></li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </div>
   </div>
 </section>
 

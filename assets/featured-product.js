@@ -12,3 +12,21 @@ function selectImage(e) {
 productImgs.forEach((img) => {
   img.addEventListener('click', selectImage);
 });
+
+const colors = document.querySelectorAll('.featured-product__color');
+const label = document.querySelector('.featured-product__label');
+
+const firstColorName = colors[0].dataset.colorName;
+label.innerHTML = `<p><span>Cor:</span> ${firstColorName}</p>`;
+
+function selectColor(e) {
+  colors.forEach((color) => color.classList.remove('selected-color'));
+
+  const color = e.currentTarget;
+  color.classList.add('selected-color');
+
+  const colorName = color.dataset.colorName;
+  label.innerHTML = `<p><span>Cor:</span> ${colorName}</p>`;
+}
+
+colors.forEach((color) => color.addEventListener('click', selectColor));
