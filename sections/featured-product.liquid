@@ -64,6 +64,17 @@
           {% endif %}
         {% endfor %}
       </ul>
+      {% assign warranty = selected_product.metafields.custom.warranty.value %}
+      <p class="featured-product__label">{{ section.settings.warranty_id }}</p>
+      <ul class="featured-product__warranty">
+        {% for option in warranty %}
+          {% if forloop.first %}
+            <li class="featured-product__warranty-option selected-warranty">{{ option.type }}</li>
+          {% else %}
+            <li class="featured-product__warranty-option">{{ option.type }}</li>
+          {% endif %}
+        {% endfor %}
+      </ul>
     </div>
   </div>
 </section>
@@ -81,6 +92,11 @@
       "type": "text",
       "id": "color_label",
       "label": "Título"
+    },
+        {
+      "type": "text",
+      "id": "warranty_id",
+      "label": "Título Garantia"
     }
   ],
   "presets": [

@@ -29,3 +29,18 @@ function selectColor(e) {
 }
 
 colors.forEach((color) => color.addEventListener('click', selectColor));
+
+const warranties = document.querySelectorAll(
+  '.featured-product__warranty-option',
+);
+
+function selectWarranty(e) {
+  warranties.forEach((warranty) => warranty.classList.remove("selected-warranty"))
+  
+  const warranty = e.currentTarget
+  warranty.classList.add("selected-warranty")
+}
+
+warranties.forEach((warranty) =>
+  warranty.addEventListener('click', selectWarranty),
+);
