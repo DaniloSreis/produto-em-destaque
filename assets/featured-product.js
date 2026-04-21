@@ -13,10 +13,10 @@ productImgs.forEach((img) => {
 });
 
 const colors = document.querySelectorAll('.featured-product__color');
-const label = document.querySelector('.featured-product__label');
+const label = document.querySelector('.featured-product__color-name');
 
 const firstColorName = colors[0].dataset.colorName;
-label.innerHTML = `<p><span>Cor:</span> ${firstColorName}</p>`;
+label.innerHTML = `<span>${firstColorName}</span>`;
 
 function selectColor(e) {
   colors.forEach((color) => color.classList.remove('selected-color'));
@@ -24,8 +24,8 @@ function selectColor(e) {
   const color = e.currentTarget;
   color.classList.add('selected-color');
 
-  const colorName = color.dataset.colorName;
-  label.innerHTML = `<p><span>Cor:</span> ${colorName}</p>`;
+  const colorName = document.querySelector('.featured-product__color-name');
+  colorName.innerText = color.dataset.colorName;
 }
 
 colors.forEach((color) => color.addEventListener('click', selectColor));

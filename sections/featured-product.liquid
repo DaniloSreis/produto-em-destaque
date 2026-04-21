@@ -43,7 +43,10 @@
 
     <div class="featured-product__options">
       {% assign colors = selected_product.metafields.custom.colors.value %}
-      <span class="featured-product__label"></span>
+      <p class="featured-product__label">
+        {{ section.settings.color_label }}
+        <span class="featured-product__color-name"></span>
+      </p>
       <ul class="featured-product__colors">
         {% for color in colors %}
           {% if forloop.first %}
@@ -73,6 +76,11 @@
       "type": "product",
       "id": "product_selected",
       "label": "Selecione o Produto"
+    },
+    {
+      "type": "text",
+      "id": "color_label",
+      "label": "Label"
     }
   ],
   "presets": [
