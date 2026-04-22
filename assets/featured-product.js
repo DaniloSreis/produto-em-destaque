@@ -35,12 +35,41 @@ const warranties = document.querySelectorAll(
 );
 
 function selectWarranty(e) {
-  warranties.forEach((warranty) => warranty.classList.remove("selected-warranty"))
-  
-  const warranty = e.currentTarget
-  warranty.classList.add("selected-warranty")
+  warranties.forEach((warranty) =>
+    warranty.classList.remove('selected-warranty'),
+  );
+
+  const warranty = e.currentTarget;
+  warranty.classList.add('selected-warranty');
 }
 
 warranties.forEach((warranty) =>
   warranty.addEventListener('click', selectWarranty),
 );
+
+const plusBtn = document.querySelector('.plus-btn');
+
+function increaseQuanity() {
+  const quantityDisplay = document.querySelector(
+    '.featured-product__quantity-value',
+  );
+
+  let currentNumber = parseInt(quantityDisplay.textContent);
+  quantityDisplay.innerText = ++currentNumber;
+}
+
+const minusBtn = document.querySelector('.minus-btn');
+
+function decreaseQuantity() {
+  const quantityDisplay = document.querySelector(
+    '.featured-product__quantity-value',
+  );
+  let currentNumber = parseInt(quantityDisplay.textContent);
+
+  if (currentNumber === 1) return
+
+  quantityDisplay.innerText = --currentNumber;
+}
+
+plusBtn.addEventListener('click', increaseQuanity);
+minusBtn.addEventListener('click', decreaseQuantity);

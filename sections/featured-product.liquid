@@ -75,6 +75,28 @@
           {% endif %}
         {% endfor %}
       </ul>
+
+      <div class="featured-product__buy-section">
+        {% if selected_product != blank %}
+          <div class="featured-product__quantity">
+            <span class="featured-product__quantity-btn minus-btn">
+              {% if selected_product != blank %}
+                {% render 'minus-icon' %}
+              {% endif %}
+            </span>
+            <span class="featured-product__quantity-value">1</span>
+            <span class="featured-product__quantity-btn plus-btn">
+              {% if selected_product != blank %}
+                {% render 'plus-icon' %}
+              {% endif %}
+            </span>
+          </div>
+          <button type="button" class="featured-product__buy-btn">
+            {% render 'shopping-cart' %}
+            {{ section.settings.button_id }}
+          </button>
+        {% endif %}
+      </div>
     </div>
   </div>
 </section>
@@ -93,10 +115,15 @@
       "id": "color_label",
       "label": "Título"
     },
-        {
+    {
       "type": "text",
       "id": "warranty_id",
       "label": "Título Garantia"
+    },
+    {
+      "type": "text",
+      "id": "button_id",
+      "label": "Texto Botão"
     }
   ],
   "presets": [
