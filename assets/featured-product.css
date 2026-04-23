@@ -234,3 +234,18 @@ ul {
   gap: 12px;
   justify-content: center;
 }
+
+.featured-product__trust-badge-list {
+  border-top: var(--border) 2px solid;
+  padding-block-start: 2em;
+  margin-block-start: 2em;
+  display: grid;
+  gap: 16px;
+}
+
+.featured-product__trust-badge {
+  align-items: center;
+  color: var(--text);
+  display: flex;
+  gap: 12px;
+}

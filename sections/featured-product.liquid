@@ -97,6 +97,27 @@
           </button>
         {% endif %}
       </div>
+
+      {% assign trust_blocks = section.blocks | where: 'type', 'trust_badge' %}
+      {% if selected_product != blank %}
+        <ul class="featured-product__trust-badge-list">
+          {% for block in trust_blocks %}
+            <li class="featured-product__trust-badge" {{ block.shopify_attributes }}>
+              {% case block.settings.icon %}
+                {% when 'shipping' %}
+                  {% render 'shipping-icon' %}
+                {% when 'safe-payment' %}
+                  {% render 'safe-payment-icon' %}
+                {% when 'return' %}
+                  {% render 'return-icon' %}
+                {% when 'custom' %}
+                  {{ block.settings.custom_icon | image_url: width: 24 | image_tag: loading: 'lazy' }}
+              {% endcase %}
+              {{ block.settings.text }}
+            </li>
+          {% endfor %}
+        </ul>
+      {% endif %}
     </div>
   </div>
 </section>
@@ -126,9 +147,61 @@
       "label": "Texto Botão"
     }
   ],
+  "blocks": [
+    {
+      "name": "Selo de Confiança",
+      "type": "trust_badge",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Ícone",
+          "options": [
+            { "value": "shipping", "label": "Frete" },
+            { "value": "safe-payment", "label": "Pagamento Seguro" },
+            { "value": "return", "label": "Devolução" },
+            { "value": "custom", "label": "Selecionar Ícone" }
+          ]
+        },
+        {
+          "type": "image_picker",
+          "id": "custom_icon",
+          "label": "Ícone"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Texto do Selo"
+        }
+      ]
+    }
+  ],
   "presets": [
     {
-      "name": "Produto em Destaque"
+      "name": "Produto em Destaque",
+      "blocks": [
+        {
+          "type": "trust_badge",
+          "settings": {
+            "icon": "shipping",
+            "text": "Frete grátis para todo o Brasil"
+          }
+        },
+        {
+          "type": "trust_badge",
+          "settings": {
+            "icon": "safe-payment",
+            "text": "Pagamento 100% seguro e criptografado"
+          }
+        },
+        {
+          "type": "trust_badge",
+          "settings": {
+            "icon": "return",
+            "text": "Devolução grátis em até 30 dias"
+          }
+        }
+      ]
     }
   ]
 }
