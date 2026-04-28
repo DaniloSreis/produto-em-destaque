@@ -45,7 +45,7 @@
       <div class="featured-product__options">
         {% assign colors = selected_product.metafields.custom.colors.value %}
         <p class="featured-product__label">
-          {{ section.settings.color_label }}
+          {{ section.settings.color_name_id }}
           <span class="featured-product__color-name"></span>
         </p>
         <ul class="featured-product__colors">
@@ -135,7 +135,7 @@
     },
     {
       "type": "text",
-      "id": "color_label",
+      "id": "color_name_id",
       "label": "Título"
     },
     {
