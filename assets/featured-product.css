@@ -37,7 +37,7 @@ img {
   display: grid;
   grid-template-columns: 1fr 1fr;
   max-width: 1200px;
-  margin: 64px auto;
+  margin: 64px auto 0;
   padding-inline: 16px;;
 }
 
