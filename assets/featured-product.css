@@ -38,7 +38,7 @@ img {
   grid-template-columns: 1fr 1fr;
   max-width: 1200px;
   margin: 64px auto 0;
-  padding-inline: 16px;;
+  padding-inline: 16px;
 }
 
 .featured-product__selected-img {
@@ -280,7 +280,7 @@ img {
 }
 
 @media screen and (max-width: 400px) {
-    .featured-product__list {
-      justify-content: space-between;
-    }
+  .featured-product__list {
+    justify-content: space-between;
+  }
 }
