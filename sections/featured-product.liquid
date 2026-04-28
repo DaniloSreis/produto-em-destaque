@@ -98,23 +98,25 @@
         </div>
 
         {% assign trust_blocks = section.blocks | where: 'type', 'trust_badge' %}
-        <ul class="featured-product__trust-badge-list">
-          {% for block in trust_blocks %}
-            <li class="featured-product__trust-badge" {{ block.shopify_attributes }}>
-              {% case block.settings.icon %}
-                {% when 'shipping' %}
-                  {% render 'shipping-icon' %}
-                {% when 'safe-payment' %}
-                  {% render 'safe-payment-icon' %}
-                {% when 'return' %}
-                  {% render 'return-icon' %}
-                {% when 'custom' %}
-                  {{ block.settings.custom_icon | image_url: width: 24 | image_tag: loading: 'lazy' }}
-              {% endcase %}
-              {{ block.settings.text }}
-            </li>
-          {% endfor %}
-        </ul>
+        {% if trust_blocks != blank %}
+          <ul class="featured-product__trust-badge-list">
+            {% for block in trust_blocks %}
+              <li class="featured-product__trust-badge" {{ block.shopify_attributes }}>
+                {% case block.settings.icon %}
+                  {% when 'shipping' %}
+                    {% render 'shipping-icon' %}
+                  {% when 'safe-payment' %}
+                    {% render 'safe-payment-icon' %}
+                  {% when 'return' %}
+                    {% render 'return-icon' %}
+                  {% when 'custom' %}
+                    {{ block.settings.custom_icon | image_url: width: 24 | image_tag: loading: 'lazy' }}
+                {% endcase %}
+                {{ block.settings.text }}
+              </li>
+            {% endfor %}
+          </ul>
+        {% endif %}
       </div>
     </div>
   </section>
