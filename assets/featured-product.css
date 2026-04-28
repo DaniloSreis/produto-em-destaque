@@ -34,6 +34,7 @@ img {
   grid-template-columns: 1fr 1fr;
   max-width: 1200px;
   margin: 64px auto;
+  padding-inline: 16px;;
 }
 
 .featured-product__selected-img {
