@@ -165,18 +165,22 @@ img {
 
 .featured-product__warranty {
   display: flex;
-  justify-items: start;
+  flex-wrap: wrap;
   gap: 12px;
   margin-block-start: 0.75em;
 }
 
 .featured-product__warranty-option {
+  align-content: center;
   color: var(--foreground);
   cursor: pointer;
   font-size: 1rem;
+  flex: 1;
   padding: 0.875em 1em;
   border: var(--border) 2px solid;
   border-radius: 6px;
+  text-align: center;
+  min-width: fit-content;
 }
 
 .selected-warranty {
