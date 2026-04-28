@@ -192,6 +192,7 @@ img {
 
 .featured-product__buy-section {
   display: flex;
+  flex-wrap: wrap;
   gap: 16px;
   margin-block-start: 1.875em;
 }
@@ -202,7 +203,7 @@ img {
   border: var(--border) 2px solid;
   border-radius: 6px;
   display: flex;
-  min-width: 220px;
+  flex: 0 1 220px;
   justify-content: space-between;
 }
 
@@ -249,7 +250,7 @@ img {
   color: #fff;
   cursor: pointer;
   display: flex;
-  flex-grow: 1;
+  flex: 1 1 220px;
   font-weight: 500;
   font-size: 1.25rem;
   gap: 12px;
