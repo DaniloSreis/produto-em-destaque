@@ -35,10 +35,15 @@ img {
 
 .featured-product {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: auto 1fr;
+  gap: 64px;
   max-width: 1200px;
   margin: 64px auto 0;
   padding: 16px;
+}
+
+.featured-product__imgs {
+  max-width: 500px;
 }
 
 .featured-product__selected-img {
@@ -46,8 +51,8 @@ img {
 }
 
 .featured-product__list {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
   gap: 18px;
   margin-block-start: 8px
 }
@@ -55,8 +60,7 @@ img {
 .featured-product__img {
   border-radius: 4px;
   cursor: pointer;
-  max-width: 74px;
-  max-height: 74px;
+  height: auto;
 }
 
 .selected {
