@@ -283,6 +283,10 @@ img {
     grid-template-columns: 1fr;
     gap: 32px;
   }
+
+  .featured-product__imgs {
+    justify-self: center;
+  }
 }
 
 @media screen and (max-width: 400px) {
