@@ -48,6 +48,7 @@ img {
 
 .featured-product__selected-img {
   border-radius: 8px;
+  height: auto;
 }
 
 .featured-product__list {
