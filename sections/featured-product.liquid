@@ -130,6 +130,10 @@
     color: {{ section.settings.badge_text_color }};
     font-size: {{ section.settings.badge_text_size }}px
   }
+  .featured-product__title {
+   color: {{ section.settings.product_title_color }};
+   font-size: {{ section.settings.product_title_size }}px
+  }
 </style>
 
 {% schema %}
@@ -177,6 +181,20 @@
       "unit": "px",
       "label": "Tamanho da Fonte do Badge",
       "default": 12
+    },
+    {
+      "type": "color",
+      "id": "product_title_color",
+      "label": "Cor do Título do Produto",
+      "default": "#0b1220",
+    }, 
+    {
+      "type": "range",
+      "id": "product_title_size",
+      "min": 32,
+      "max": 48,
+      "label": "Tamanho do Título do Produto",
+      "default": 40
     }
   ],
   "blocks": [
