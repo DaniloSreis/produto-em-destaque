@@ -290,6 +290,12 @@ img {
   }
 }
 
+@media screen and (max-width: 920px) {
+  .featured-product__trust-badge-list {
+    flex-direction: column;
+  }
+}
+
 @media screen and (max-width: 400px) {
   .featured-product__list {
     justify-content: space-between;
