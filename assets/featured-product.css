@@ -268,7 +268,7 @@ img {
   border-top: var(--border) 2px solid;
   padding-block-start: 2em;
   margin-block-start: 2em;
-  display: grid;
+  display: flex;
   gap: 16px;
 }
 
