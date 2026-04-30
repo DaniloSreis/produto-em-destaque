@@ -124,6 +124,14 @@
   </section>
 {% endif %}
 
+<style>
+  .featured-product__badge {
+    background: {{ section.settings.badge_bacakground }};
+    color: {{ section.settings.badge_text_color }};
+    font-size: {{ section.settings.badge_text_size }}px
+  }
+</style>
+
 {% schema %}
 {
   "name": "Produto em Destaque",
@@ -147,6 +155,28 @@
       "type": "text",
       "id": "button_id",
       "label": "Texto Botão"
+    },
+    {
+      "type": "color",
+      "id": "badge_bacakground",
+      "label": "Cor de Fundo Badge",
+      "default": "#ffb84d"
+    },
+    {
+      "type": "color",
+      "id": "badge_text_color",
+      "label": "Cor do Texto do Badge",
+      "default": "#703800"
+    },
+    {
+      "type": "range",
+      "id": "badge_text_size",
+      "min": 8,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "label": "Tamanho da Fonte do Badge",
+      "default": 12
     }
   ],
   "blocks": [
@@ -208,7 +238,7 @@
             "text": "Devolução grátis em até 30 dias"
           }
         }
-      ],
+      ]
     }
   ]
 }
