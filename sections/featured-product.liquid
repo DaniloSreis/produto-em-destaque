@@ -138,6 +138,7 @@
   .featured-product__warranty-option {
     background: {{ section.settings.warranty_options_background }};
     color: {{ section.settings.warranty_options_color }};
+    font-size: {{ section.settings.warranty_options_text_size }}px;
   }
 
   .selected-warranty {
@@ -229,6 +230,14 @@
       "id": "warranty_options_color",
       "label": "Cor de Texto das Garantias",
       "default": "#0b1220"
+    }, 
+    {
+      "type": "range",
+      "id": "warranty_options_text_size",
+      "max": 20,
+      "min": 16,
+      "label": "Tamanho do Texto das Garantias",
+      "default": 16
     }
   ],
   "blocks": [
