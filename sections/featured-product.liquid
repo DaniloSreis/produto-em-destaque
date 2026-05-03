@@ -147,7 +147,8 @@
   }
 
   .featured-product__buy-btn {
-    background: {{ section.settings.buy_button_background }}
+    background: {{ section.settings.buy_button_background }};
+    color: {{ section.settings.buy_button_color }}
   }
 </style>
 
@@ -264,6 +265,12 @@
       "id": "buy_button_background",
       "label": "Cor de Fundo",
       "default": "#0b76ff"
+    },
+    {
+      "type": "color",
+      "id": "buy_button_color",
+      "label": "Cor de Texto",
+      "default": "#ffffff"
     }
   ],
   "blocks": [
