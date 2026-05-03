@@ -148,7 +148,8 @@
 
   .featured-product__buy-btn {
     background: {{ section.settings.buy_button_background }};
-    color: {{ section.settings.buy_button_color }}
+    color: {{ section.settings.buy_button_color }};
+    font-size: {{ section.settings.buy_button_font_size }}px
   }
 </style>
 
@@ -271,6 +272,14 @@
       "id": "buy_button_color",
       "label": "Cor de Texto",
       "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "buy_button_font_size",
+      "max": 20,
+      "min": 16,
+      "label": "Tamanho do Texto",
+      "default": 20
     }
   ],
   "blocks": [
