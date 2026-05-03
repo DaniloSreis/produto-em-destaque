@@ -136,7 +136,8 @@
   }
 
   .featured-product__warranty-option {
-    background: {{ section.settings.warranty_options_background }}
+    background: {{ section.settings.warranty_options_background }};
+    color: {{ section.settings.warranty_options_color }};
   }
 
   .selected-warranty {
@@ -222,6 +223,12 @@
       "id": "warranty_options_background",
       "label": "Cor de Fundo das Garantias",
       "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "warranty_options_color",
+      "label": "Cor de Texto das Garantias",
+      "default": "#0b1220"
     }
   ],
   "blocks": [
