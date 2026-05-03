@@ -145,6 +145,10 @@
     background: {{ section.settings.selected_warranty_background }};
     color: {{ section.settings.selected_warranty_color }}
   }
+
+  .featured-product__buy-btn {
+    background: {{ section.settings.buy_button_background }}
+  }
 </style>
 
 {% schema %}
@@ -254,6 +258,12 @@
     {
       "type": "header",
       "content": "Configurações do Botão de Comprar"
+    },
+    { 
+      "type": "color",
+      "id": "buy_button_background",
+      "label": "Cor de Fundo",
+      "default": "#0b76ff"
     }
   ],
   "blocks": [
