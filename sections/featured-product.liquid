@@ -134,6 +134,10 @@
    color: {{ section.settings.product_title_color }};
    font-size: {{ section.settings.product_title_size }}px
   }
+
+  .selected-warranty {
+    background: {{ section.settings.selected_warranty_background }}
+  }
 </style>
 
 {% schema %}
@@ -195,6 +199,12 @@
       "max": 48,
       "label": "Tamanho do Título do Produto",
       "default": 40
+    },
+    {
+      "type": "color",
+      "id": "selected_warranty_background",
+      "label": "Cor de Fundo da Garantia Selecionada",
+      "default": "#0b76ff"
     }
   ],
   "blocks": [
