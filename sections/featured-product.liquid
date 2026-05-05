@@ -139,6 +139,8 @@
     background: {{ section.settings.warranty_options_background }};
     color: {{ section.settings.warranty_options_color }};
     font-size: {{ section.settings.warranty_options_text_size }}px;
+    border: {{ section.settings.warranty_options_border_color }} {{ section.settings.warranty_options_border_width }}px {{ section.settings.warranty_options_border_style }};
+    border-radius: {{ section.settings.warranty_options_border_radius }}px
   }
 
   .selected-warranty {
@@ -248,7 +250,45 @@
       "id": "warranty_options_color",
       "label": "Cor do Texto (Não Selecionado)",
       "default": "#0b1220"
-    }, 
+    },
+    {
+      "type": "color",
+      "id": "warranty_options_border_color",
+      "label": "Cor da borda",
+      "default": "#0b1220"
+    },
+    {
+      "type": "select",
+      "id": "warranty_options_border_style",
+      "label": "Estilo de Borda",
+      "options": [
+        { "value": "none", "label": "Nenhuma"},
+        { "value": "solid", "label": "Sólida"},
+        { "value": "dashed", "label": "Tracejada"},
+        { "value": "dotted", "label": "Pontilhada"},
+      ],
+      "default": "solid"
+    },
+    {
+      "type": "range",
+      "id": "warranty_options_border_width",
+      "max": 10,
+      "min": 2,
+      "step": 1,
+      "unit": "px",
+      "label": "Tamanho da Borda",
+      "default": 2 
+    },
+    {
+      "type": "range",
+      "id": "warranty_options_border_radius",
+      "max": 10,
+      "min": 0,
+      "step": 1,
+      "unit": "px",
+      "label": "Arreondamento",
+      "default": 6
+    },
     {
       "type": "range",
       "id": "warranty_options_text_size",
