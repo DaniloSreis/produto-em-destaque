@@ -57,7 +57,7 @@ function selectColor(e) {
   clickedColor.classList.add('selected-color');
   
   const label = document.querySelector('.featured-product__color-name');
-  label.innerHTML = `<span>${e.target.dataset.colorName}</span>`;
+  label.innerHTML = `<span>${clickedColor.dataset.colorName}</span>`;
 }
 
 function selectWarranty(e) {
