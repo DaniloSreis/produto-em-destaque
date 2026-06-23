@@ -43,7 +43,7 @@ function selectImage(e) {
 
   clickedImg.classList.add('selected');
 
-  selectedImg.srcset = e.target.srcset;
+  selectedImg.srcset = clickedImg.srcset;
 }
 
 function selectColor(e) {
