@@ -104,17 +104,19 @@
           <ul class="featured-product__trust-badge-list">
             {% for block in trust_blocks %}
               <li class="featured-product__trust-badge" {{ block.shopify_attributes }}>
-                {% case block.settings.icon %}
-                  {% when 'shipping' %}
-                    {% render 'shipping-icon' %}
-                  {% when 'safe-payment' %}
-                    {% render 'safe-payment-icon' %}
-                  {% when 'return' %}
-                    {% render 'return-icon' %}
-                  {% when 'custom' %}
-                    {{ block.settings.custom_icon | image_url: width: 24 | image_tag: loading: 'lazy' }}
-                {% endcase %}
-                {{ block.settings.text }}
+                {% if block.settings.custom_icon %}
+                  {{ block.settings.custom_icon | image_url: width: 24 | image_tag: loading: 'lazy' }}
+                {% else %}
+                  {% case block.settings.icon %}
+                    {% when 'shipping' %}
+                      {% render 'shipping-icon' %}
+                    {% when 'safe-payment' %}
+                      {% render 'safe-payment-icon' %}
+                    {% when 'return' %}
+                      {% render 'return-icon' %}
+                  {% endcase %}
+                  {{ block.settings.text }}
+                {% endif %}
               </li>
             {% endfor %}
           </ul>
@@ -338,7 +340,6 @@
             { "value": "shipping", "label": "Frete" },
             { "value": "safe-payment", "label": "Pagamento Seguro" },
             { "value": "return", "label": "Devolução" },
-            { "value": "custom", "label": "Selecionar Ícone" }
           ]
         },
         {
