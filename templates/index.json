@@ -1,8 +1,39 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "featured-product": {
       "type": "featured-product",
-      "settings": {}
+      "settings": {
+        "product_selected": "headphone-premium",
+        "color_name_id": "Cor:",
+        "warranty_id": "Garantia Estendida",
+        "button_id": "Adicionar ao Carrinho",
+        "badge_bacakground": "#ffb84d",
+        "badge_text_color": "#703800",
+        "badge_text_size": 18,
+        "product_title_color": "#0b1220",
+        "product_title_size": 40,
+        "selected_warranty_background": "#0b76ff",
+        "selected_warranty_color": "#ffffff",
+        "warranty_options_background": "#ffffff",
+        "warranty_options_color": "#0b1220",
+        "warranty_options_border_color": "#0b1220",
+        "warranty_options_border_style": "solid",
+        "warranty_options_border_width": 2,
+        "warranty_options_border_radius": 6,
+        "warranty_options_text_size": 16,
+        "buy_button_background": "#0b76ff",
+        "buy_button_color": "#ffffff",
+        "buy_button_font_size": 20
+      }
     }
   },
   "order": [
