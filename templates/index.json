@@ -11,6 +11,34 @@
   "sections": {
     "featured-product": {
       "type": "featured-product",
+      "blocks": {
+        "trust_badge_rtdxt8": {
+          "type": "trust_badge",
+          "settings": {
+            "icon": "shipping",
+            "text": "Frete grátis para todo o Brasil"
+          }
+        },
+        "trust_badge_ihbhcw": {
+          "type": "trust_badge",
+          "settings": {
+            "icon": "safe-payment",
+            "text": "Pagamento 100% seguro e criptografado"
+          }
+        },
+        "trust_badge_4FWwNa": {
+          "type": "trust_badge",
+          "settings": {
+            "icon": "return",
+            "text": "Devolução grátis em até 30 dias"
+          }
+        }
+      },
+      "block_order": [
+        "trust_badge_rtdxt8",
+        "trust_badge_ihbhcw",
+        "trust_badge_4FWwNa"
+      ],
       "settings": {
         "product_selected": "headphone-premium",
         "color_name_id": "Cor:",
